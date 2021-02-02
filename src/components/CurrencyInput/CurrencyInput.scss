@@ -1,0 +1,183 @@
+@import "../../styles/global";
+
+.CurrencyInput, .CurrencyInput-primary, .CurrencyInput-additional {
+  display: flex;
+  align-items: center;
+}
+
+.CurrencyInput {
+  width: 100%;
+  position: relative;
+}
+
+.CurrencyInput_show-search {
+  .CurrencyInput-primary {
+    width: 15px;
+    border-color: $form-control-active-border-color;
+    border-bottom-left-radius: 0;
+
+
+    .CurrencyInput__input {
+      display: none;
+    }
+  }
+
+  .CurrencyInput-additional {
+    width: calc(100% - 15px);
+    cursor: auto;
+    border-color: $form-control-active-border-color;
+    border-bottom-right-radius: 0;
+
+    &:hover {
+      background-color: $form-control-background-color;
+    }
+
+    .CurrencyInput__delimiter {
+      opacity: 0;
+    }
+  }
+
+  .currencies-picker {
+    max-height: 144px;
+    opacity: 1;
+  }
+}
+
+.CurrencyInput-primary {
+  border-bottom-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  padding-right: 0 !important;
+  border-right: none !important;
+  width: calc(100% - 150px);
+  transition: $transition;
+}
+
+
+.CurrencyInput__input {
+  margin-right: 14px;
+}
+
+.CurrencyInput-additional {
+  width: 150px;
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-left: none !important;
+  padding-left: 0 !important;
+  transition: $transition;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  &:hover {
+    background-color: $form-control-border-color;
+
+    .CurrencyInput__select-button {
+      fill: $action-icon-hover-color;
+      stroke: $action-icon-hover-color;
+    }
+  }
+
+  &_disabled {
+    cursor: auto;
+    background-color: $form-control-background-color !important;
+
+    .CurrencyInput__selected-currency {
+      opacity: 0.7;
+    }
+
+    .CurrencyInput__select-button {
+      fill: $action-icon-color !important;
+      stroke: $action-icon-color !important;
+    }
+  }
+}
+
+
+.CurrencyInput__delimiter {
+  background-color: $form-control-border-color;
+  width: 1px;
+  height: 30px;
+  transition: $transition;
+}
+
+.CurrencyInput__select-button, .CurrencyInput__clear-button {
+  width: 16px;
+  flex-shrink: 0;
+  transition: $transition;
+  fill: $action-icon-color;
+  stroke: $action-icon-color;
+}
+
+.CurrencyInput__clear-button {
+  width: 16px;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  &:hover {
+    fill: $action-icon-hover-color;
+    stroke: $action-icon-hover-color;
+  }
+}
+
+.CurrencyInput__selected-currency {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  text-transform: uppercase;
+
+  @include disable-text-selection;
+}
+
+.CurrencyInput__selected-currency-icon {
+  height: 20px;
+  margin-right: 14px;
+}
+
+.currencies-picker {
+  @include remove-scrollbar;
+
+  top: 49px;
+  position: absolute;
+  max-height: 0;
+  opacity: 0;
+  transition: $transition;
+  width: 100%;
+  overflow: auto;
+  background-color: $form-control-background-color;
+  border: 1px solid $form-control-active-border-color;
+  border-top: 1px solid $form-control-border-color;
+  border-radius: 0 0 $border-radius $border-radius;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.currencies-picker__currency {
+  height: 48px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px;
+  transition: $transition;
+  cursor: pointer;
+
+  @include disable-text-selection;
+
+  &:hover {
+    background-color: $select-hover-element-color;
+  }
+}
+
+.currencies-picker__currency-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+}
+
+.currencies-picker__currency-ticker {
+  text-transform: uppercase;
+  margin-right: 12px;
+}
+
+.currencies-picker__currency-name {
+  color: $action-icon-color;
+}
