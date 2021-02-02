@@ -1,10 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.scss";
+import Index from "./pages/index/Index";
+
 
 function App() {
   return (
     <div className="App">
+      <Index/>
     </div>
   );
 }

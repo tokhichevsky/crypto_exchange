@@ -1,0 +1,50 @@
+.Index {
+  max-width: 960px;
+  width: 100%;
+  padding-bottom: 30px;
+  margin: auto;
+}
+
+.Index__title-block {
+  margin-bottom: 60px;
+}
+
+.Index__title {
+  font-weight: 300;
+  font-size: 50px;
+  line-height: 120%;
+  margin-bottom: 15px;
+}
+
+.Index__description {
+  font-size: 20px;
+  line-height: 100%;
+  margin: 0;
+}
+
+.Index__bottom {
+  margin-top: 32px;
+}
+
+.Index__wallet-submit {
+  display: flex;
+  margin-top: 8px;
+
+  @media all and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.Index__wallet-label {
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.Index__wallet {
+  width: 100%;
+  margin-right: 32px;
+
+  @media all and (max-width: 768px) {
+    margin-bottom: 16px;
+  }
+}
