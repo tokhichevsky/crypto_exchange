@@ -1,0 +1,47 @@
+@import "../../styles/global";
+
+
+.ExchangeField {
+  display: flex;
+
+  @media all and (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 156px;
+  }
+}
+
+.ExchangeField__exchange-button {
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  margin: auto 20px;
+  cursor: pointer;
+
+  &:hover .ExchangeField__exchange-icon {
+    fill: $button-background-hover-color;
+  }
+
+  &_disabled {
+    cursor: auto;
+
+    .ExchangeField__exchange-icon {
+      fill: lighten($button-background-color, 10%) !important;
+    }
+  }
+
+  @media all and (max-width: 768px) {
+    margin: auto 0;
+    width: 32px
+  }
+}
+
+.ExchangeField__exchange-icon {
+  fill: $button-background-color;
+  transition: $transition;
+
+  @media all and (max-width: 768px) {
+    transform: rotate(90deg);
+  }
+}
