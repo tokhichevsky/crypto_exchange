@@ -1,0 +1,49 @@
+@import "../../styles/global";
+
+.Button {
+  @include remove-default-styles-button;
+  height: 50px;
+  //width: 100%;
+  padding: 0 60px;
+  background-color: $button-background-color;
+  border-radius: $border-radius;
+  transition: $transition;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 120%;
+  flex-shrink: 0;
+  margin-bottom: 8px;
+
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+
+  @media all and (max-width: 768px) {
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: $button-background-hover-color;
+  }
+
+  &:disabled {
+    background-color: lighten($button-background-color, 20%) !important;
+    cursor: auto;
+  }
+}
+
+.Button_invalid-text {
+  color: #E03F3F;
+}
+
+.Button-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+
+  @media all and (max-width: 768px) {
+    width: 100%;
+  }
+}
